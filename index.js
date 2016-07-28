@@ -13,7 +13,7 @@ function main() {
 
 // Find project root from current working directory.
 function getProjectRoot() {
-    let currentDir = process.cwd()
+    var currentDir = process.cwd()
     while(! fs.existsSync(currentDir + '/package.json') && currentDir) {
         currentDir = path.dirname(currentDir)
     }
