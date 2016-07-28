@@ -3,7 +3,7 @@ We love [react-native-config](https://github.com/luggg/react-native-config), a m
 
 We'd like to **test** react-native code in Node.js.
 As `react-native-config` contains native codes, it cannot be run in Nodejs environment.
-We provide the way to switch Nodejs-implementation of loading .env file when
+We provide a way to mock the module.
 
 # Installation
 ```js
