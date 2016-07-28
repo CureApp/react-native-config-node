@@ -1,0 +1,25 @@
+{
+  "name": "react-native-config-node",
+  "version": "0.0.0",
+  "description": "Mock for react-native-config in nodejs environment, used for testing",
+  "main": "index",
+  "keywords": [
+    "env",
+    "react-native",
+    "12factor",
+    "config"
+  ],
+  "scripts": {
+    "test": "mocha test/transform.js && cd test && ./run-test.sh"
+  },
+  "author": "CureApp, Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "mocha": "^2.5.3",
+    "node-circleci-autorelease": "^2.2.0"
+  }
+}
