@@ -1,2 +1,8 @@
 node_modules
 *.log
+test
+circle.yml
+.bmp.yml
+.autorelease.yml
+.releaseignore
+.gitignore
