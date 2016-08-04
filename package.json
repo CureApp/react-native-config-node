@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
-    "mocha": "^2.5.3",
+    "mocha": "^3.0.1",
     "node-circleci-autorelease": "^2.2.0"
   }
 }
