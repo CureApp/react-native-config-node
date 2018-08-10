@@ -1,6 +1,6 @@
 {
   "name": "react-native-config-node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mock for react-native-config in nodejs environment, used for testing",
   "main": "index",
   "keywords": [
@@ -12,6 +12,11 @@
   "scripts": {
     "test": "mocha test/transform.js && cd test && ./run-test.sh"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CureApp/react-native-config-node.git"
+  },
+  "homepage": "https://github.com/CureApp/react-native-config-node",
   "author": "CureApp, Inc.",
   "license": "MIT",
   "dependencies": {
