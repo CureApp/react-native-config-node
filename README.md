@@ -6,11 +6,14 @@ As `react-native-config` contains native codes, it cannot be run in Nodejs envir
 We provide a way to mock the module.
 
 # Installation
-```js
+```
 npm install --save-dev react-native-config-node
 ```
 
-# Usage (using mocha)
+# Usage
+
+## Mocha
+
 Create a compiler file using `babel-register`.
 
 `test/lib/babel-register.js`
@@ -31,12 +34,55 @@ Alternatively, you can set [mocha.opts](https://mochajs.org/#mochaopts).
 --compilers js:./test/lib/babel-register
 ```
 
-You can pass specific environment via `NODE_ENV` variable.
+You can pass specific environment via `ENVFILE` variable.
 
 ```sh
-NODE_ENV=staging mocha --compilers js:./test/lib/babel-register test/spec/*.js
+ENVFILE=.env.staging mocha --compilers js:./test/lib/babel-register test/spec/*.js
 ```
 `.env.staging` will be loaded.
+
+```sh
+ENVFILE=env/.env.staging mocha --compilers js:./test/lib/babel-register test/spec/*.js
+```
+`env/.env.staging will be loaded.`
+
+## Jest
+
+```
+npm i babel-plugin-import-rename --save-dev
+```
+
+Add the following to your .babelrc
+
+```
+{
+  "presets": ["react-native"],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "import-rename",
+          {
+            "^react-native-config$": "react-native-config-node"
+          }
+        ]
+      ]
+    }
+  }
+}
+```
+
+You can pass specific environment via `ENVFILE` variable.
+
+```sh
+ENVFILE=.env.staging jest
+```
+`.env.staging` will be loaded.
+
+```sh
+ENVFILE=env/.env.staging jest
+```
+`env/.env.staging will be loaded.`
 
 # How it works
 `react-native-config-node/transform` is a babel-plugin transforming the following code
