@@ -2,12 +2,11 @@ const dotenv = require('dotenv')
 const fs = require('fs')
 const path = require('path')
 
-// Load /path/to/project-root/.env file and returns the key-value object
-// Load .env.staging, .env.production if NODE_ENV environment variable is defined.
+// Load /path/to/project-root/path/to/.env file and returns the key-value object
 function main() {
     const projectRoot = getProjectRoot()
-    const nodeEnv = getNodeEnv()
-    const file = loadEnvFile(projectRoot, nodeEnv)
+    const envFile = getEnvFile()
+    const file = loadEnvFile(projectRoot, envFile)
     return dotenv.parse(file)
 }
 
@@ -23,24 +22,23 @@ function getProjectRoot() {
     return currentDir
 }
 
-// Find .env file from projectRoot and NODE_ENV
+// Find .env file from projectRoot and ENVFILE
 // Returns Buffer
-function loadEnvFile(projectRoot, nodeEnv) {
+function loadEnvFile(projectRoot, envFile) {
+    const filePath = projectRoot + '/.env';
 
-    const filePath = getProjectRoot() + '/.env'
-
-    if (nodeEnv) {
-        if (fs.existsSync(filePath + '.' + nodeEnv)) {
-            return fs.readFileSync(filePath + '.' + nodeEnv)
+    if (envFile) {
+        if (fs.existsSync(projectRoot + '/' + envFile)) {
+            return fs.readFileSync(projectRoot + '/' + envFile)
         }
     }
     return fs.readFileSync(filePath)
 }
 
 
-// Get environment variable: NODE_ENV
-function getNodeEnv() {
-    return process.env.NODE_ENV
+// Get environment variable: ENVFILE
+function getEnvFile() {
+    return process.env.ENVFILE
 }
 
 module.exports = main()
