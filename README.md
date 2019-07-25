@@ -10,7 +10,9 @@ We provide a way to mock the module.
 npm install --save-dev react-native-config-node
 ```
 
-# Usage (using mocha)
+# Usage
+
+## Mocha
 Create a compiler file using `babel-register`.
 
 `test/lib/babel-register.js`
@@ -43,6 +45,32 @@ ENVFILE=env/.env.prod mocha --compilers js:./test/lib/babel-register test/spec/*
 ```
 
 `env/.env.prod` will be loaded.
+
+## Jest
+
+```
+npm install react-native-config-node babel-plugin-import-rename --save-dev`
+```
+
+Add the following to your .babelrc
+
+```
+{
+  "presets": ["react-native"],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "import-rename",
+          {
+            "^react-native-config$": "react-native-config-node"
+          }
+        ]
+      ]
+    }
+  }
+}
+```
 
 # How it works
 `react-native-config-node/transform` is a babel-plugin transforming the following code
