@@ -33,6 +33,7 @@ module.exports = require('babel-register')({
 ```
 
 Use it via command.
+
 ```sh
 mocha --compilers js:./test/lib/babel-register test/spec/*.js
 ```
@@ -43,17 +44,12 @@ Alternatively, you can set [mocha.opts](https://mochajs.org/#mochaopts).
 --compilers js:./test/lib/babel-register
 ```
 
-You can pass specific environment via `ENVFILE` variable.
+You can pass specific environment via `NODE_ENV` variable.
 
 ```sh
-ENVFILE=.env.staging mocha --compilers js:./test/lib/babel-register test/spec/*.js
+NODE_ENV=staging mocha --compilers js:./test/lib/babel-register test/spec/*.js
 ```
 `.env.staging` will be loaded.
-
-```sh
-ENVFILE=env/.env.staging mocha --compilers js:./test/lib/babel-register test/spec/*.js
-```
-`env/.env.staging will be loaded.`
 
 ## Jest
 
@@ -86,8 +82,9 @@ Add the following to your .babelrc
 You can pass specific environment via `NODE_ENV` variable.
 
 ```sh
-NODE_ENV=staging mocha --compilers js:./test/lib/babel-register test/spec/*.js
+NODE_ENV=staging jest
 ```
+`.env.staging` will be loaded.
 
 # How it works
 `react-native-config-node/transform` is a babel-plugin transforming the following code
