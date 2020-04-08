@@ -103,4 +103,4 @@ MIT
 [license]: https://opensource.org/licenses/MIT
 [version-badge]: https://img.shields.io/npm/v/react-native-config-node.svg
 [package]: https://www.npmjs.com/package/react-native-config-node
-[license-badge]: https://img.shields.io/npm/l/react-naative-config-node.svg?style=flat-square
+[license-badge]: https://img.shields.io/npm/l/react-native-config-node.svg
