@@ -2,23 +2,27 @@
   "name": "react-native-config-node",
   "version": "0.0.3",
   "description": "Mock for react-native-config in nodejs environment, used for testing",
-  "main": "index",
   "keywords": [
     "env",
     "react-native",
     "12factor",
     "config"
   ],
-  "scripts": {
-    "test": "mocha test/transform.js && cd test && ./run-test.sh"
-  },
+  "homepage": "https://github.com/CureApp/react-native-config-node",
   "repository": {
     "type": "git",
     "url": "https://github.com/CureApp/react-native-config-node.git"
   },
-  "homepage": "https://github.com/CureApp/react-native-config-node",
-  "author": "CureApp, Inc.",
   "license": "MIT",
+  "author": "CureApp, Inc.",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "transform.js"
+  ],
+  "scripts": {
+    "test": "mocha test/transform.js && cd test && ./run-test.sh"
+  },
   "dependencies": {
     "dotenv": "^8.2.0"
   },

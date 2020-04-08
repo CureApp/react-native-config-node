@@ -1,4 +1,9 @@
-# Node.js mock for react-native-config
+# react-native-config-node
+[![Version][version-badge]][package]
+[![semantic-release][semantic-release-badge]](https://github.com/semantic-release/semantic-release)
+[![MIT License][license-badge]][license]
+
+Node.js mock for react-native-config
 
 A mock for [react-native-config](https://github.com/luggg/react-native-config), a module which offers an elegant way to inject environment-specific variables to [react-native](https://facebook.github.io/react-native/).
 
@@ -66,14 +71,7 @@ Add the following to your .babelrc
   "presets": ["module:metro-react-native-babel-preset"],
   "env": {
     "test": {
-      "plugins": [
-        [
-          "import-rename",
-          {
-            "^react-native-config$": "react-native-config-node"
-          }
-        ]
-      ]
+      "plugins": ['react-native-config-node/transform']
     }
   }
 }
@@ -90,13 +88,13 @@ NODE_ENV=staging jest
 `react-native-config-node/transform` is a babel-plugin transforming the following code
 
 ```js
-import Config from `react-native-config`
+import Config from 'react-native-config'
 ```
 
 into
 
 ```js
-import Config from `react-native-config-node`
+import Config from 'react-native-config-node'
 ```
 
 `react-native-config-node` offers the same API as `react-native-config` using [dotenv](https://www.npmjs.com/package/dotenv).
@@ -105,3 +103,9 @@ import Config from `react-native-config-node`
 ## License
 
 MIT
+
+[semantic-release-badge]:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[license]: https://opensource.org/licenses/MIT
+[version-badge]: https://img.shields.io/npm/v/react-native-config-node.svg
+[package]: https://www.npmjs.com/package/react-native-config-node
+[license-badge]: https://img.shields.io/npm/l/react-naative-config-node.svg?style=flat-square
