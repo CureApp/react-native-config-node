@@ -20,11 +20,10 @@
   "author": "CureApp, Inc.",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^2.0.0"
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
-    "mocha": "^3.0.2",
-    "node-circleci-autorelease": "^2.2.0"
+    "mocha": "^3.0.2"
   }
 }
