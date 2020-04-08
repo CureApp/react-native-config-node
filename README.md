@@ -58,13 +58,8 @@ NODE_ENV=staging mocha --compilers js:./test/lib/babel-register test/spec/*.js
 
 ## Jest
 
-In order to use this mock with jest, you will need to add a plugin that renames imported module.
 
-```
-npm i babel-plugin-import-rename --save-dev
-```
-
-Add the following to your .babelrc
+Add the following plugin to your `babel.config.js` or `.babelrc`
 
 ```
 {
