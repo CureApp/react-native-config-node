@@ -66,7 +66,7 @@ Add the following plugin to your `babel.config.js` or `.babelrc`
   "presets": ["module:metro-react-native-babel-preset"],
   "env": {
     "test": {
-      "plugins": ['react-native-config-node/transform']
+      "plugins": ["react-native-config-node/transform"]
     }
   }
 }
