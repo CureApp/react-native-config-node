@@ -28,6 +28,6 @@
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
-    "mocha": "^3.0.2"
+    "mocha": "^8.1.3"
   }
 }
